@@ -32,13 +32,14 @@ class App extends Component {
     });
     let msg = Object.assign({}, this.state.msg);
     msg = '';
-    let id = Object.assign({}, this.state.id);
+    let id = Object.assign(0, this.state.id);
     id = id + 1;
     this.setState({
       msg: msg,
       chats: chats,
       id: id,
     });
+    console.log(this.state);
   }
   render() {
     return (
