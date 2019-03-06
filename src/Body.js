@@ -1,42 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Message from './Message';
 
-class Body extends Component {
-	constructor() {
-		super();
-		this.state = {
-			chats: [{
-				username: 'John',
-				msg: 'Hello! Welcome to the chat room.'
-			},
-			{
-				username: 'Sherlock',
-				msg: 'Wait...does the earth really go around the sun??'
-			}
-			],
-			float: 0
-		};
-	}
-
-	changeFloat = () => {
-		this.setState({
-			float: !this.state.float
-		})
-	}
-
-	render() {
-		const { chats, float } = this.state;
+const Body = (props) => {
+		const { chats } = props;
 		return (
 			<div className='bg-washed-yellow'>
 				{
 					chats.map(chat => {
-						this.changeFloat();
-						return <Message chat={chat} float={float}/>
+						return <Message chat={chat.msg} key={chat.username}/>
 					})
 				}
 			</div>
 			);
-	}
 }
 
 export default Body;

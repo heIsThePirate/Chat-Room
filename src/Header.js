@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Header extends Component {
-	render(){
+const Header = () => {
 		return (
 			<div className='f2 garamond fl w-100 bg-dark-green bb'>Chat Room</div>
-			);
-	}
+		);
 }
 
 export default Header;
